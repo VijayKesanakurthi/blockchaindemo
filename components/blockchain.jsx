@@ -9,7 +9,7 @@ import { sha256 } from 'js-sha256';
 
 
  const BlockChain=()=>{
-  const[chain,setChain]=useState([{block: 1, chain: 1, nonce: 11316, previous: '0000',hash:'000015783b764259d382017d91a36d206d0600e2cbb3567748f46a33fe9297cf',data:""}])
+  const[chain,setChain]=useState([{block: 1, chain: 1, nonce: 11316, previous: '0000',hash:'000015783b764259d382017d91a36d206d0600e2cbb3567748f46a33fe9297cf',data:" block data",timestamp:Date().toString()}])
 
   //Back Process
   var difficulty = 4;  
@@ -19,12 +19,12 @@ for (var x=0; x<difficulty; x++) {
   pattern += '0';
 }
 function addBlock(data){
-     const block={block: chain.length+1,data:data, chain: 1, nonce: 11316, previous:chain[chain.length-1].hash,hash:""}
+     const block={block: chain.length+1,data:data, chain: 1, nonce: 11316, previous:chain[chain.length-1].hash,hash:"",timestamp:Date().toString()}
   mine(block);
   setChain([... chain,block])
   
 }
-   // updateChain()
+
 
   function mine(block, isChain=false) {
   for (var x = 0; x <= maximumNonce; x++) {
@@ -33,13 +33,8 @@ function addBlock(data){
     if (block.hash.slice(0,4) === pattern) {
       block.nonce=x;
       
-      if (isChain) {
-        // setChain(e=>e.map(b=>b.block===block.block?block:b))
+      if (isChain) 
         hashChange(block,block.data,true)
-      }
-      // else {
-      //   updateState(block, chain);
-      // }
       
       break;
     }

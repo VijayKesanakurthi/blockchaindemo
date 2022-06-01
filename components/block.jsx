@@ -62,7 +62,7 @@ const Block=({data,hashChange,mine})=>{
       </div>
       <div className="flex justify-between">
         <div className="text-2xl font-pop">
-          BLOCK #{data.block}
+          BLOCK #{data.block} <span className="text-xs">{data.timestamp.split("(")[0]}</span>
         </div>
     <div >
       <button disabled={data.hash.slice(0,4)==="0000"} onClick={()=>mine(data,true)} className={button.btn}><GiMiner/><span >Mine</span> </button>
