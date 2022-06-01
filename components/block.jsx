@@ -4,8 +4,8 @@ import {useState} from 'react';
 
 const Block=({data,hashChange,mine})=>{
   const styles={
-    wrapper:`flex space-y-5 font-extralight   bg-white align-center w-full p-5 pt-8 border min-w-xl max-w-xl justify-center flex-col w-full shadow-md rounded-lg hover:shadow-2xl transition-all`,
-    inputwrapper:"  flex   w-full  items-center ",
+    wrapper:`font-robo flex space-y-5  block  bg-white align-center w-[340px] md:w-[1280px] p-5 pt-8 border max-w-md md:max-w-xl justify-center flex-col w-full shadow-md rounded-lg hover:shadow-2xl transition-all`,
+    inputwrapper:"  flex  items-center ",
     input:"outline-none text-xs p-[4px]  flex-1 ",
     inputgroup:`p-[3px]  hover:border-sky-400 focus-within:ring-2 focus-within:ring-sky-100 focus-within:border-sky-400 flex rounded-r-lg items-center border flex-1`,
     texticon:"p-[4px] pl-2",
@@ -13,8 +13,8 @@ const Block=({data,hashChange,mine})=>{
   }
   const text={
     wrapper:"space-y-2 ",
-    prev:"flex space-x-2 items-center",
-    scroll:"overflow-x-scroll scrollbar-thin text-[13px] max-md",
+    prev:"flex space-x-2 items-center ",
+    scroll:"overflow-x-scroll scrollbar-thin text-[13px] max-md transition-all",
     green:" bg-lime-50 border text-[#52c41a] rounded border-[#52c41a] px-2",
     txt:"text-sm",
     greenprev:"text-[#52c41a] text-[0.7rem]",
@@ -23,7 +23,7 @@ const Block=({data,hashChange,mine})=>{
     
   }
   const button={
-    btn:`flex items-center text-md  bg-gradient-to-r from-gray-700 via-gray-900 to-black px-4 space-x-2 py-[5px] rounded-full text-white`
+    btn:`${data.hash.slice(0,4)==="0000"?"cursor-not-allowed bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none":"bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80"} flex items-center text-white font-medium rounded-lg  px-4 space-x-2 py-[5px]  transition-all text-white font-pop`
   }
   
   return(
@@ -54,18 +54,18 @@ const Block=({data,hashChange,mine})=>{
        <div className={`${data.hash.slice(0,4)==="0000"?text.green:text.red} ${text.scroll}`}>{data.hash}  </div>
      </div>
      </div>
-      <div className="flex space-x-2">
-      <p className={text.txt}>Nounce</p>
-        <div className="text-sm ">
+      <div className="flex items-center space-x-2">
+      <p className={text.txt}>NONCE</p>
+        <div className="text-sm border bg-gray-50 px-2 py-[2px] rounded ">
     {data.nonce}
           </div>
       </div>
       <div className="flex justify-between">
-        <div>
-          Block #{data.block}
+        <div className="text-2xl font-pop">
+          BLOCK #{data.block}
         </div>
     <div >
-      <button disabled={data.hash.slice(0,4)==="0000"} onClick={()=>mine(data,true)} className={button.btn}><GiMiner/>Mine</button>
+      <button disabled={data.hash.slice(0,4)==="0000"} onClick={()=>mine(data,true)} className={button.btn}><GiMiner/><span >Mine</span> </button>
     </div>
         </div>
   </div>

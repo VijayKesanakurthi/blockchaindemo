@@ -11,8 +11,8 @@ import {useState} from 'react'
 
 export default function add({handle}){
   const styles={
-    wrapper:` bg-white mt-14 flex space-y-8 font-extralight   items-center w-full p-5 py-8 border max-w-sm justify-center flex-col w-full shadow-md rounded-lg hover:shadow-2xl transition-all`,
-    inputwrapper:"  flex   w-full  items-center ",
+    wrapper:` bg-white mt-14 flex space-y-8 font-extralight   items-center w-full p-8 border max-w-xs md:max-w-sm justify-center flex-col w-full shadow-md rounded-lg hover:shadow-2xl transition-all`,
+    inputwrapper:"  flex    items-center ",
     input:"outline-none text-xs p-[4px]  flex-1 ",
     inputgroup:`p-[3px]  hover:border-sky-400 focus-within:ring-2 focus-within:ring-sky-100 focus-within:border-sky-400 flex rounded-r-lg items-center border flex-1`,
     texticon:"p-[4px] pl-2",

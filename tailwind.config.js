@@ -4,7 +4,14 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        pop:["Poppins","sans-serif"],
+        robo:['Roboto', 'sans-serif'],
+        dev:['Tiro Devanagari Hindi', 'serif']
+        
+      }
+    },
   },
   plugins: [
         require('tailwind-scrollbar')

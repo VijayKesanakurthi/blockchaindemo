@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import BlockChain from '../components/blockchain'
+import Header from '../components/header'
 
 
 export default function Home() {
   return (
-   <div className="bg-gray-50 h-full max-h-full flex py-10 justify-center align-center">
-    
+   <div className="bg-gray-50 min-h-screen flex flex-col py-2 space-y-5 justify-center items-center">
+    <Header/>
     <BlockChain/>
    </div>
   )
