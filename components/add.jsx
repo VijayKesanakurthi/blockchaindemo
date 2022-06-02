@@ -4,7 +4,7 @@ import {useState} from 'react'
 
 
 
-export default function add({handle}){
+export default function Add({handle}){
   const styles={
     wrapper:" bg-white  flex space-y-4 md:space-y-8 font-extralight   items-center w-full p-8 border max-w-xs md:max-w-sm justify-center flex-col shadow-md rounded-lg hover:shadow-2xl transition-all ",
     inputwrapper:"  flex    items-center ",
@@ -15,8 +15,8 @@ export default function add({handle}){
     button:"bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:bg-gray-400 text-white font-bold w-full  max-w-[12rem] py-2 px-4 rounded",
   }
   
-
   const [input,setInput]=useState("");
+  
   function handleClick(){
    handle(input)
   }
