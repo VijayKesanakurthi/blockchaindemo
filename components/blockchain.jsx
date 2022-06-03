@@ -1,7 +1,7 @@
 import Block from './block'
 import Add from './add'
 import {useState} from 'react'
-// import {IoIosArrowDown} from 'react-icons/io'
+
 import {FcExpand} from 'react-icons/fc'
 import { sha256 } from 'js-sha256';
 
@@ -22,7 +22,6 @@ function addBlock(data){
      const block={block: chain.length+1,data:data, chain: 1, nonce: 11316, previous:chain[chain.length-1].hash,hash:"",timestamp:Date().toString()}
   mine(block);
   setChain([... chain,block])
-  
 }
 
 
@@ -59,9 +58,6 @@ function addBlock(data){
       return e
     })
   )
-   
-    
-  
   }
 
   function getSha256(txt) {
