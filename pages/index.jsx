@@ -9,8 +9,7 @@ export default function Home() {
     <Head>
     <title>Block Chain Demo</title>  
     </Head>
-   <div className="bg-gray-50 min-h-screen flex flex-col py-2 space-y-5 justify-center items-center">
-     <Nav/>
+   <div className=" min-h-screen flex flex-col py-2 space-y-5 justify-center items-center">
     <Header/>
     <BlockChain/>
    </div>

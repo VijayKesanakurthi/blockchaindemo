@@ -1,15 +1,26 @@
 import { useState } from "react";
 import { Transition } from "@headlessui/react";
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const router=useRouter()
+
+  const isActive=(route)=>{
+    if(route===router.pathname) return true
+    return false
+    
+  }
+  
   const styles={
    navItem:`text-gray-100 hover:bg-indigo-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium`,
+    actv:'bg-indigo-500',
     mobileItem:"text-gray-300 hover:bg-purple-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
 
   }
   return (
-        <nav className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 max-w-screen w-11/12 rounded-xl">
+        <nav className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 max-w-screen w-11/12 rounded-xl mt-2">
         <div className="max-w-screen px-4 py-2 sm:px-6 relative lg:px-8">
           <div className="flex items-center justify-between ">
             <div className="flex w-full items-center justify-between">
@@ -18,12 +29,13 @@ function Nav() {
               </div>
               <div className="hidden md:block ">
                 <div className="ml-10 flex items-baseline space-x-4">
-                  <a
-                    href="#"
-                    className={`${styles.navItem}`}
+                  <Link href="/hash">
+                    <a 
+                    className={`${styles.navItem} ${isActive('/hash')?styles.actv:' '}` }
                   >
                     Hash
                   </a>
+                    </Link>
 
                   <a
                     href="#"
@@ -31,14 +43,14 @@ function Nav() {
                   >
                     Block
                   </a>
-
+                  <Link href="/">
+                       
                   <a
-                    href="#"
-                    className={`${styles.navItem}`}
+                    className={`${styles.navItem} ${isActive('/')?styles.actv:' '}`}
                   >
                    Blockchain
                   </a>
-
+                  </Link>
                   <a
                     href="#"
                     className={`${styles.navItem}`}
