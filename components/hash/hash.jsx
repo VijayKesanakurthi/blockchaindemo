@@ -1,13 +1,17 @@
+import {useState} from 'react'
+import { sha256 } from 'js-sha256';
+
 
 export default function Hash(){
-
-
+  const [data,setData]=useState("")
+  
   return(
-    <div className="">
-      <div className="block p-6 rounded-lg shadow-lg bg-white max-w-screen w-11/12 full hover:shadow-lg">
-    <label htmlForfor="exampleFormControlTextarea1" className="form-label inline-block mb-2 text-gray-700"
-      >Example textarea</label>
+    <div className="block space-y-5 p-6 mt-2 rounded-lg shadow-lg bg-white max-w-screen min-w-[80vw] xl:min-w-[65vw] full hover:shadow-xl mt-2">
+      <div className=" flex space-x-5">
+    <label htmlForfor="data" className="form-label inline-block mb-2 text-gray-700"
+      >Data</label>
     <textarea
+      id="data"
       className="
         form-control
         block
@@ -18,17 +22,23 @@ export default function Hash(){
         font-normal
         text-gray-700
         bg-white bg-clip-padding
-        border border-solid border-gray-500
+        border-[1.7px] border-solid border-gray-500
         rounded
         transition
         ease-in-out
         m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+      foucus:ring-blue-300
+        focus:text-gray-700 focus:bg-white focus:border-blue-400 focus:outline-none "
       
-      rows="8"
+      rows="12"
       placeholder="Data"
+      onChange={e=>setData(e.target.value)}
     ></textarea>
     </div>
+      <div className="flex space-x-5 items-center">
+        <span className="">Hash</span>
+        <p className="border rounded-lg p-2">{sha256(data)}</p>
+      </div>
       </div>
     
   )
