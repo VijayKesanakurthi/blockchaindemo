@@ -16,7 +16,7 @@ function Nav() {
   const styles={
    navItem:`text-gray-100 hover:bg-indigo-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium`,
     actv:'bg-indigo-500',
-    mobileItem:"text-gray-300 hover:bg-purple-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+    mobileItem:"text-gray-300 hover:bg-purple-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
 
   }
   return (
@@ -134,37 +134,43 @@ function Nav() {
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a
                   href="#"
-                  className="hover:bg-pink-400 text-white block px-3 py-2 rounded-md text-base font-medium"
+                  className={`${styles.mobileItem}`}
                 >
-                  Dashboard
+                  Hash
                 </a>
 
                 <a
                   href="#"
                   className={`${styles.mobileItem}`}
                 >
-                  Team
+                 Block
                 </a>
 
                 <a
                   href="#"
                   className={`${styles.mobileItem}`}
                 >
-                  Projects
+                  Blockchain
                 </a>
 
                 <a
                   href="#"
                   className={`${styles.mobileItem}`}
                 >
-                  Calendar
+                  Distributed
                 </a>
 
                 <a
                   href="#"
                   className={`${styles.mobileItem}`}
                 >
-                  Reports
+                  Tokens
+                </a>
+                  <a
+                  href="#"
+                  className={`${styles.mobileItem}`}
+                >
+                  Coinbase
                 </a>
               </div>
             </div>
