@@ -4,7 +4,7 @@ import {useState} from 'react';
 
 const Block=({data,hashChange,mine})=>{
   const styles={
-    wrapper:`font-robo flex space-y-5  block  bg-white align-center w-[340px] md:w-[1280px] p-5 pt-8 border max-w-md md:max-w-xl justify-center flex-col w-full shadow-md rounded-lg hover:shadow-2xl transition-all`,
+    wrapper:`font-robo flex space-y-5  block  bg-white align-center w-[340px] sm:w-full sm:w-screen md:w-[1280px] p-5 pt-8 border max-w-md md:max-w-xl justify-center flex-col w-full shadow-md rounded-lg hover:shadow-2xl transition-all`,
     inputwrapper:"  flex  items-center ",
     input:"outline-none text-xs p-[4px]  flex-1 ",
     inputgroup:`p-[3px]  hover:border-sky-400 focus-within:ring-2 focus-within:ring-sky-100 focus-within:border-sky-400 flex rounded-r-lg items-center border flex-1`,
