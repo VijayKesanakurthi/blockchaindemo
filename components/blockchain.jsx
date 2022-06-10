@@ -69,6 +69,9 @@ function addBlock(data){
 
   return(
     <div className="flex flex-col space-y-5 justify-center items-center">
+       <h1 className="text-4xl text-center font-black m-4 font-pop">
+      BLOCK CHAIN
+    </h1>
       <Block data={chain[0]} hashChange={hashChange} mine={mine}/>
       {chain.slice(1,).map((e)=>
       <div  key={e.block} className="flex flex-col items-center justify-center space-y-5">

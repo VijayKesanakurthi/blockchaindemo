@@ -8,7 +8,7 @@ export default function Hash(){
 
   
   return(
-    <div className="block space-y-5 p-6 mt-2 rounded-lg shadow-lg bg-white max-w-[80vw] min-w-[80vw] xl:min-w-[65vw] full hover:shadow-xl mt-2">
+    <div className="block space-y-5 p-6 mt-2 rounded-lg shadow-lg bg-white max-w-[80vw] min-w-[80vw] xl:min-w-[65vw] full hover:shadow-xl m-4">
       <div className=" flex space-x-5">
     <label htmlForfor="data" className="form-label inline-block mb-2 text-gray-700"
       >Data</label>
@@ -41,7 +41,7 @@ export default function Hash(){
     </div>
       <div className="flex space-x-5 items-center">
         <span className="">Hash</span>
-        <p className={color?"border bg-lime-50 border text-[#52c41a] border-[#52c41a] overflow-x-scroll scrollbar-thin rounded-lg p-2 transition-all":`border overflow-x-scroll scrollbar-thin rounded-lg transition-all p-2`}>{sha256(data)}</p>
+        <p className={color?"border bg-lime-50 border text-[#52c41a] border-[#52c41a] overflow-x-scroll scrollbar-thin rounded-lg p-2 transition-all text-medium":`border overflow-x-scroll scrollbar-thin rounded-lg transition-all p-2 text-medium`}>{sha256(data)}</p>
       </div>
       </div>
     
