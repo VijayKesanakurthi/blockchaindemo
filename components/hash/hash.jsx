@@ -4,6 +4,8 @@ import { sha256 } from 'js-sha256';
 
 export default function Hash(){
   const [data,setData]=useState("")
+  const [color,setColor]=useState(false)
+
   
   return(
     <div className="block space-y-5 p-6 mt-2 rounded-lg shadow-lg bg-white max-w-[80vw] min-w-[80vw] xl:min-w-[65vw] full hover:shadow-xl mt-2">
@@ -33,12 +35,13 @@ export default function Hash(){
       
       rows="12"
       placeholder="Data"
-      onChange={e=>setData(e.target.value)}
+      onChange={e=>{setData(e.target.value);
+                    setColor(true)    ;      setTimeout(()=>setColor(false),100)}}
     ></textarea>
     </div>
       <div className="flex space-x-5 items-center">
         <span className="">Hash</span>
-        <p className="border overflow-x-scroll scrollbar-thin rounded-lg p-2">{sha256(data)}</p>
+        <p className={color?"border bg-lime-50 border text-[#52c41a] border-[#52c41a] overflow-x-scroll scrollbar-thin rounded-lg p-2 transition-all":`border overflow-x-scroll scrollbar-thin rounded-lg transition-all p-2`}>{sha256(data)}</p>
       </div>
       </div>
     
