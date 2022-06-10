@@ -41,7 +41,7 @@ function Nav() {
               <div className="hidden md:block ">
                 <div className="ml-10 flex items-baseline space-x-4">
                   {navigate.map((e,i)=>
-          <Link href={e.route}>
+          <Link href={e.route} key={i}>
                     <a 
                     className={`${styles.navItem} ${isActive(e.route)?styles.actv:' '}` }
                   >
@@ -112,7 +112,7 @@ function Nav() {
             <div className="md:hidden bg-gradient-to-l from-rose-400 via-fuchsia-500 to-indigo-500 w-full opacity-90 rounded-lg absolute   bg-opacity-60 backdrop-filter backdrop-blur-lg" id="mobile-menu z-0 shadow">
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                  {navigate.map((e,i)=>
-          <Link href={e.route}>
+          <Link href={e.route} key={i}>
                     <a 
                     className={`${styles.mobileItem} ${isActive(e.route)?styles.actv:' '}` }
                   >
