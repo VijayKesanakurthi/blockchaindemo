@@ -8,7 +8,7 @@ export default function Hash(){
 
   
   return(
-    <div className="block space-y-5 p-6 mt-2 rounded-lg shadow-lg bg-white max-w-[80vw] min-w-[80vw] xl:min-w-[65vw] full hover:shadow-xl m-4">
+    <div className="block space-y-5 p-6 mt-2 rounded-lg shadow-lg bg-white max-w-[80vw] min-w-[80vw] xl:min-w-[65vw] full hover:shadow-2xl m-4">
       <div className=" flex space-x-5">
     <label htmlForfor="data" className="form-label inline-block mb-2 text-gray-700"
       >Data</label>
